@@ -1,0 +1,398 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="S,C)i{D_b%XV!I+z8LB_">gas under</variable>
+    <variable id="l;p?!0H3@1]RE*Q5`.~$">gas over</variable>
+  </variables>
+  <block type="s4d_login" id="~Qw{k@BKJw.?Jj1xQ{pm" x="159" y="62">
+    <value name="TOKEN">
+      <shadow type="text" id="(YJ1JrsiQ-=4qxw)^I:7">
+        <field name="TEXT"></field>
+      </shadow>
+      <block type="frost_env" id="azed*@%,EK:5|,~bp9`}">
+        <value name="VALUE">
+          <shadow type="text" id="L/z,E=#Hg/*6HjK+fBc2">
+            <field name="TEXT">token</field>
+          </shadow>
+        </value>
+      </block>
+    </value>
+  </block>
+  <block type="s4d_on_connected" id="G,.1Y~N)32c@W`8C(O_}" x="157" y="245">
+    <statement name="STATEMENTS">
+      <block type="jg_comments_connected_comment" id="Ala.zIkueQCfuZ]nq)tA">
+        <field name="TEXT">when the bot is tered on run this code</field>
+        <next>
+          <block type="variables_set" id="Mk;hKy5mjik3C97e2aqi">
+            <field name="VAR" id="S,C)i{D_b%XV!I+z8LB_">gas under</field>
+            <value name="VALUE">
+              <block type="logic_boolean" id="zge[*5w2fDG-xSM.G;q*">
+                <field name="BOOL">FALSE</field>
+              </block>
+            </value>
+            <next>
+              <block type="s4d_forever" id="R](Kp]-*M;%:z$?q9srS">
+                <statement name="STATEMENT">
+                  <block type="jg_comments_connected_comment" id="/Z31ffw`=LWGE`0z;188">
+                    <field name="TEXT">make a loop forever</field>
+                    <next>
+                      <block type="s4d_http_get_then" id="[ldt5$[QPpt3yqVHuX/V">
+                        <value name="HTTPS">
+                          <block type="jg_text_remake_paragraph_quotes" id="eCMOec=TR$!C8gPy;#~d">
+                            <field name="TEXT">https://api.etherscan.io/api?module=gastracker&amp;action=gasoracle&amp;apikey=QHVJHD1IMWSWRKW11XSUW95U19VIWBVSR2</field>
+                          </block>
+                        </value>
+                        <statement name="THEN">
+                          <block type="jg_comments_connected_comment" id="Da-/MWc9kV*uh-dh[ARV">
+                            <field name="TEXT">make a api calll</field>
+                            <next>
+                              <block type="s4d_set_bot_game" id="7tDd4HD:H_C4P=h4dW8[">
+                                <field name="OIFD">online</field>
+                                <field name="TYPE">WATCHING</field>
+                                <value name="GAME">
+                                  <block type="text_join" id="Z(%,AqhKp_GjMGxOwoUr">
+                                    <mutation items="6"></mutation>
+                                    <value name="ADD0">
+                                      <block type="jg_text_remake_paragraph_quotes" id="Dm,KqD-u%1/D+%rmAj]c">
+                                        <field name="TEXT">⚡</field>
+                                      </block>
+                                    </value>
+                                    <value name="ADD1">
+                                      <block type="s4d_get_string_of_data" id="DOuANoem6Szb7|UAVDM|">
+                                        <value name="VALUE">
+                                          <block type="jg_text_remake_paragraph_quotes" id="dF6aHUXe?_lN+4+I=7|?">
+                                            <field name="TEXT">result.FastGasPrice</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <value name="ADD2">
+                                      <block type="jg_text_remake_paragraph_quotes" id="+sgW9P)A/N6{8UkFhWMg">
+                                        <field name="TEXT"> |🚶‍♀️</field>
+                                      </block>
+                                    </value>
+                                    <value name="ADD3">
+                                      <block type="s4d_get_string_of_data" id="B@w?+5uiM%hpX_|}c2eI">
+                                        <value name="VALUE">
+                                          <block type="jg_text_remake_paragraph_quotes" id="^Qxd7l,,8d;;h`::JJ4M">
+                                            <field name="TEXT">result.ProposeGasPrice</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <value name="ADD4">
+                                      <block type="jg_text_remake_paragraph_quotes" id="7w;nb3X.mWQai0Em:*tl">
+                                        <field name="TEXT"> |🐢</field>
+                                      </block>
+                                    </value>
+                                    <value name="ADD5">
+                                      <block type="s4d_get_string_of_data" id="|PhQ_vMv4XLUhHN;H2!D">
+                                        <value name="VALUE">
+                                          <block type="jg_text_remake_paragraph_quotes" id="~gW$6xOmnX*}Zd!-L`z1">
+                                            <field name="TEXT">result.SafeGasPrice</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="jg_comments_connected_comment" id="=XzXlBz*y*c)R{)in$jC">
+                                    <field name="TEXT">set the bots stats</field>
+                                    <next>
+                                      <block type="jg_comments_connected_comment" id="y{3.Vf!IiM+uk5$IjJ}T">
+                                        <field name="TEXT">if gas gos lower then send a msg</field>
+                                        <next>
+                                          <block type="controls_if" id="lnbiKE$bJY;_^%.SIk_.">
+                                            <mutation elseif="1"></mutation>
+                                            <value name="IF0">
+                                              <block type="logic_compare" id="R3j7d*=NXFrPy2[E]83c">
+                                                <field name="OP">LTE</field>
+                                                <value name="A">
+                                                  <block type="s4d_string_to_number" id="(IH.K+8Pi=FEt?zZ:ag$">
+                                                    <value name="STRING">
+                                                      <block type="s4d_get_string_of_data" id="}0Mlc}#[^UQsFGG:bYq7">
+                                                        <value name="VALUE">
+                                                          <block type="jg_text_remake_paragraph_quotes" id="uW2Dp(?3OEI*/$BvfUA6">
+                                                            <field name="TEXT">result.ProposeGasPrice</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                                <value name="B">
+                                                  <block type="math_number" id="HM;Qnt]d|,cahp9;,Grb">
+                                                    <field name="NUM">45</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <statement name="DO0">
+                                              <block type="jg_comments_connected_comment" id="6q8^)XhYpGNmZPspNix8">
+                                                <field name="TEXT">see if it under the set pruce all redy</field>
+                                                <next>
+                                                  <block type="controls_if" id="9S[(|xN+4__M3QKgklj?">
+                                                    <value name="IF0">
+                                                      <block type="logic_compare" id=":s6,]mV!O)U9q}0q40~q">
+                                                        <field name="OP">EQ</field>
+                                                        <value name="A">
+                                                          <block type="variables_get" id="tcPULLdp%zJ2Bw{+bO4w">
+                                                            <field name="VAR" id="S,C)i{D_b%XV!I+z8LB_">gas under</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="B">
+                                                          <block type="logic_boolean" id="]:jk%4x4[/o#ITe2%,HM">
+                                                            <field name="BOOL">FALSE</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                    <statement name="DO0">
+                                                      <block type="variables_set" id="r8(SLo9A,GcESWiZ;Xhy">
+                                                        <field name="VAR" id="S,C)i{D_b%XV!I+z8LB_">gas under</field>
+                                                        <value name="VALUE">
+                                                          <block type="logic_boolean" id="J4c!=P|jL,$Zr73XOm0;">
+                                                            <field name="BOOL">TRUE</field>
+                                                          </block>
+                                                        </value>
+                                                        <next>
+                                                          <block type="jg_comments_connected_comment" id=".!ub=mfk/B*{K0Ckm;X#">
+                                                            <field name="TEXT">send the msg</field>
+                                                            <next>
+                                                              <block type="s4d_send_channel" id="rqXZuLLc[8MaW9Y]42:s">
+                                                                <value name="CONTENT">
+                                                                  <block type="text_join" id=":scMmx%8Z.,q]G!$xQ9(">
+                                                                    <mutation items="2"></mutation>
+                                                                    <value name="ADD0">
+                                                                      <block type="jg_text_remake_paragraph_quotes" id="7BW*-3v.HHaV%~2^o9pA">
+                                                                        <field name="TEXT"> &lt;@&amp;991764034300944455&gt; we are under </field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="ADD1">
+                                                                      <block type="s4d_get_string_of_data" id="pbl##e,W3W:J@o6VUhw2">
+                                                                        <value name="VALUE">
+                                                                          <block type="jg_text_remake_paragraph_quotes" id="hZ_:D8^-gqR,_u2x{uVp">
+                                                                            <field name="TEXT">result.ProposeGasPrice</field>
+                                                                          </block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="CHANNEL">
+                                                                  <block type="s4d_get_channel" id="08QU[_6iW:dzdKvX/UnP">
+                                                                    <field name="SEARCH_TYPE">ID</field>
+                                                                    <value name="VALUE">
+                                                                      <block type="jg_text_remake_paragraph_quotes" id="4f05{7@4LYX*X03b}b:X">
+                                                                        <field name="TEXT">991756014191911003</field>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </value>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </statement>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </statement>
+                                            <value name="IF1">
+                                              <block type="logic_compare" id="UWP#|l}Z@J5|R`{kFQY_">
+                                                <field name="OP">LTE</field>
+                                                <value name="A">
+                                                  <block type="s4d_string_to_number" id="))Icu3wW;fG#h2fO@-En">
+                                                    <value name="STRING">
+                                                      <block type="s4d_get_string_of_data" id="C(S:cdd48;f3-DTKZYQr">
+                                                        <value name="VALUE">
+                                                          <block type="jg_text_remake_paragraph_quotes" id="(Ikknrch|bIT=u`.7mG4">
+                                                            <field name="TEXT">result.ProposeGasPrice</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                                <value name="B">
+                                                  <block type="math_number" id="L:A1hm^{McGIB/7Ri(=G">
+                                                    <field name="NUM">90</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <statement name="DO1">
+                                              <block type="variables_set" id="%*],VWV+*zFjbxv82C*A">
+                                                <field name="VAR" id="S,C)i{D_b%XV!I+z8LB_">gas under</field>
+                                                <value name="VALUE">
+                                                  <block type="logic_boolean" id="jcn+_IQADfesVe:)7*6P">
+                                                    <field name="BOOL">FALSE</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </statement>
+                                            <next>
+                                              <block type="controls_if" id="BTWH?YM=x@vr#7lj9v=A">
+                                                <mutation elseif="1"></mutation>
+                                                <value name="IF0">
+                                                  <block type="logic_compare" id="mJBk*$98pvS]#d?R;!.w">
+                                                    <field name="OP">GTE</field>
+                                                    <value name="A">
+                                                      <block type="s4d_string_to_number" id="Ila*n`DF-IjQn$dmGtIE">
+                                                        <value name="STRING">
+                                                          <block type="s4d_get_string_of_data" id="kZ~suD5d@w4B)DRJinx%">
+                                                            <value name="VALUE">
+                                                              <block type="jg_text_remake_paragraph_quotes" id="8/o2|8AMs?/.nNV!f@08">
+                                                                <field name="TEXT">result.ProposeGasPrice</field>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                    <value name="B">
+                                                      <block type="math_number" id="WP}SmX1(qWwmi(yoim3Y">
+                                                        <field name="NUM">250</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                                <statement name="DO0">
+                                                  <block type="jg_comments_connected_comment" id="{2i*7N!A8={S?@2;}LS]">
+                                                    <field name="TEXT">see if it over the set pruce all redy</field>
+                                                    <next>
+                                                      <block type="controls_if" id="v[_H4;Pfep_78NS{%O%M">
+                                                        <value name="IF0">
+                                                          <block type="logic_compare" id="J}3.JS0gB:PNc@7v-2]j">
+                                                            <field name="OP">EQ</field>
+                                                            <value name="A">
+                                                              <block type="variables_get" id="Z)XZe;.:uJlm]=Dt_j~Y">
+                                                                <field name="VAR" id="l;p?!0H3@1]RE*Q5`.~$">gas over</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="B">
+                                                              <block type="logic_boolean" id="D}%^_FOv=V%_re0AD9ut">
+                                                                <field name="BOOL">FALSE</field>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                        <statement name="DO0">
+                                                          <block type="variables_set" id="}Cp-/+3XEr_Hsw:CbI0a">
+                                                            <field name="VAR" id="l;p?!0H3@1]RE*Q5`.~$">gas over</field>
+                                                            <value name="VALUE">
+                                                              <block type="logic_boolean" id="svHZH{tVFi~]_REq*Bw`">
+                                                                <field name="BOOL">TRUE</field>
+                                                              </block>
+                                                            </value>
+                                                            <next>
+                                                              <block type="jg_comments_connected_comment" id="V:0M=H8Ml548KI4Fc7?B">
+                                                                <field name="TEXT">send the msg</field>
+                                                                <next>
+                                                                  <block type="s4d_send_channel" id="-t4R7{{9lNldXY|vjqC#">
+                                                                    <value name="CONTENT">
+                                                                      <block type="text_join" id="Kn?9Q+a3.hL}tqVDeo$*">
+                                                                        <mutation items="2"></mutation>
+                                                                        <value name="ADD0">
+                                                                          <block type="jg_text_remake_paragraph_quotes" id="9fFLO??mzrR3A~T.3Xu/">
+                                                                            <field name="TEXT">&lt;@&amp;991764034300944455&gt; we are over</field>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="ADD1">
+                                                                          <block type="s4d_get_string_of_data" id="gBl43Uj_mT^7s8eSqii$">
+                                                                            <value name="VALUE">
+                                                                              <block type="jg_text_remake_paragraph_quotes" id="ie`Su0u|A[E/7.%w9!XX">
+                                                                                <field name="TEXT">result.ProposeGasPrice</field>
+                                                                              </block>
+                                                                            </value>
+                                                                          </block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="CHANNEL">
+                                                                      <block type="s4d_get_channel" id="FZNHy56.HZajZyt%7G%I">
+                                                                        <field name="SEARCH_TYPE">ID</field>
+                                                                        <value name="VALUE">
+                                                                          <block type="jg_text_remake_paragraph_quotes" id="#l8YoD0Q2@Takuh6a?p;">
+                                                                            <field name="TEXT">991756014191911003</field>
+                                                                          </block>
+                                                                        </value>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </statement>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </statement>
+                                                <value name="IF1">
+                                                  <block type="logic_compare" id="**p$b:WD9/=SRBL%.z_r">
+                                                    <field name="OP">LTE</field>
+                                                    <value name="A">
+                                                      <block type="s4d_string_to_number" id="o458w1[~cK0n3c:(2_kW">
+                                                        <value name="STRING">
+                                                          <block type="s4d_get_string_of_data" id="I2dnRpz{KY%y,A*Pt~#@">
+                                                            <value name="VALUE">
+                                                              <block type="jg_text_remake_paragraph_quotes" id="%cEsN?y3Z`DZYypCS9{#">
+                                                                <field name="TEXT">result.ProposeGasPrice</field>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                    <value name="B">
+                                                      <block type="math_number" id="O)]OlKlL%RdOs.F0/%70">
+                                                        <field name="NUM">200</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                                <statement name="DO1">
+                                                  <block type="variables_set" id="tp=B~)!l${X8CW}4V8W/">
+                                                    <field name="VAR" id="l;p?!0H3@1]RE*Q5`.~$">gas over</field>
+                                                    <value name="VALUE">
+                                                      <block type="logic_boolean" id="{v/g~RIkrfwrX@VJasb^">
+                                                        <field name="BOOL">FALSE</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </statement>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="s4d_wait_seconds" id="f+:p#|g}Ud45KSR(q%(B">
+                            <value name="TIME">
+                              <shadow type="math_number" id="S6bT4U^VXt,;3MR`jN6t">
+                                <field name="NUM">1</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
